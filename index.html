@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  height:100vh;
+  min-height:100vh;
   font-family:'Poppins',sans-serif;
   background:linear-gradient(135deg,#ff4d6d,#ff8fab);
   display:flex;
@@ -30,34 +30,11 @@ body{
   animation:zoomIn 1.2s ease;
 }
 
-h1{
-  font-size:1.8rem;
-  animation:fadeDown 1.5s ease;
-}
-
-.names{
-  margin:8px 0 12px;
-  font-size:1.05rem;
-  opacity:0.9;
-}
-
-.slider{
-  height:180px;
-  border-radius:15px;
-  margin-bottom:15px;
-  background:url('https://i.imgur.com/QCNbOAo.jpg') center/cover;
-  animation:slideShow 12s infinite;
-}
-
-p{
-  font-size:1.05rem;
-  margin:10px 0;
-  line-height:1.6;
-  animation:fadeUp 2s ease;
-}
+h1{font-size:1.8rem;}
+.names{margin:8px 0 12px;opacity:0.9;}
 
 .propose{
-  font-size:1.4rem;
+  font-size:1.35rem;
   font-weight:bold;
   margin-top:15px;
   animation:glow 2s infinite alternate;
@@ -91,12 +68,33 @@ button{
   position:relative;
 }
 
-.share{
+/* YES text animation */
+.yesText{
+  display:none;
+  font-size:1.6rem;
+  font-weight:bold;
+  margin-bottom:12px;
+  animation:bounceIn 1.2s ease;
+}
+
+/* Video section */
+.videoBox{
+  display:none;
   margin-top:15px;
-  font-size:0.9rem;
-  opacity:0.9;
-  text-decoration:underline;
-  cursor:pointer;
+  animation:fadeUp 1.2s ease;
+}
+
+video{
+  width:100%;
+  border-radius:15px;
+}
+
+/* Shayari */
+.shayari{
+  margin-top:12px;
+  font-size:1.05rem;
+  line-height:1.6;
+  animation:fadeUp 1.5s ease;
 }
 
 /* Floating hearts */
@@ -116,63 +114,28 @@ button{
 }
 
 /* Animations */
-@keyframes zoomIn{
-  from{transform:scale(0.7);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-@keyframes heartbeat{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
-}
-@keyframes glow{
-  from{text-shadow:0 0 5px #fff;}
-  to{text-shadow:0 0 20px #fff;}
-}
-@keyframes floatUp{
-  to{transform:translateY(-120vh);opacity:0;}
-}
-@keyframes flowerFall{
-  to{transform:translateY(110vh) rotate(360deg);opacity:0;}
-}
-@keyframes slideShow{
-  0%{background-image:url('https://i.imgur.com/QCNbOAo.jpg');}
-  33%{background-image:url('https://i.imgur.com/4AiXzf8.jpg');}
-  66%{background-image:url('https://i.imgur.com/9Yj1K0G.jpg');}
+@keyframes zoomIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+@keyframes heartbeat{50%{transform:scale(1.1);}}
+@keyframes glow{from{text-shadow:0 0 5px #fff;}to{text-shadow:0 0 20px #fff;}}
+@keyframes floatUp{to{transform:translateY(-120vh);opacity:0;}}
+@keyframes flowerFall{to{transform:translateY(110vh) rotate(360deg);opacity:0;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+@keyframes bounceIn{
+  0%{transform:scale(0.5);opacity:0;}
+  60%{transform:scale(1.15);}
+  100%{transform:scale(1);opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-</audio>
-
 <div class="card">
+
+  <div class="yesText" id="yesText">She said YES ❤️🥹</div>
+
   <h1>Hey Kanika ❤️</h1>
   <div class="names">From Vishal 💕</div>
-
-  <div class="slider"></div>
-
-  <p>
-    Jab se tum meri life mein aayi ho,<br>
-    har din thoda zyada special ho gaya hai ✨
-  </p>
-
-  <p>
-    Tum meri smile ki wajah ho,<br>
-    meri har dua ka answer 💖
-  </p>
 
   <div class="propose">
     Will you be mine forever? 💍
@@ -183,60 +146,62 @@ button{
     <button class="no" onmouseover="moveNo()">No 😜</button>
   </div>
 
-  <div class="share" onclick="shareLove()">
-    💌 Share this with Kanika
+  <!-- Video + Shayari -->
+  <div class="videoBox" id="videoBox">
+    <video controls autoplay>
+      <source src="proposal.mp4" type="video/mp4">
+    </video>
+
+    <div class="shayari">
+      🌸 *Kanika, tum mili to laga khuda ne sun li meri dua,*<br>
+      *tumhare saath har din lagta hai sabse khoobsurat sa.*<br>
+      *Na future ka dar, na kal ki fikr…*<br>
+      **bas ek hi khwahish hai — tum meri ho, aur hamesha raho ❤️💍**  
+      <br><br>
+      — *Forever yours, Vishal* 💕
+    </div>
   </div>
+
 </div>
 
 <script>
 // Floating hearts
-function createHeart(){
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤️";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=Math.random()*25+15+"px";
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),7000);
-}
-setInterval(createHeart,300);
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=Math.random()*20+15+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},300);
 
-// Yes click – flower rain
+// YES click
 function yesClicked(){
-  startFlowerRain();
-  alert("I Love You Kanika ❤️🥹 Forever Yours — Vishal");
+  document.getElementById("yesText").style.display="block";
+  document.getElementById("videoBox").style.display="block";
+  flowerRain();
 }
 
-function startFlowerRain(){
-  let count=0;
-  const interval=setInterval(()=>{
-    createFlower();
-    count++;
-    if(count>40) clearInterval(interval);
+// Flower rain
+function flowerRain(){
+  let i=0;
+  const inter=setInterval(()=>{
+    const f=document.createElement("div");
+    f.className="flower";
+    f.innerHTML="🌸";
+    f.style.left=Math.random()*100+"vw";
+    f.style.fontSize=Math.random()*20+20+"px";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),4000);
+    if(++i>40) clearInterval(inter);
   },100);
 }
 
-function createFlower(){
-  const flower=document.createElement("div");
-  flower.className="flower";
-  flower.innerHTML="🌸";
-  flower.style.left=Math.random()*100+"vw";
-  flower.style.fontSize=Math.random()*20+20+"px";
-  document.body.appendChild(flower);
-  setTimeout(()=>flower.remove(),4000);
-}
-
-// No button moves
+// No button funny
 function moveNo(){
   const btn=document.querySelector('.no');
   btn.style.transform=`translate(${Math.random()*80-40}px,${Math.random()*80-40}px)`;
-}
-
-// WhatsApp share
-function shareLove(){
-  const text="Kanika ❤️ Vishal\nWill you be mine forever? 💍";
-  const url=window.location.href;
-  window.open(`https://wa.me/?text=${encodeURIComponent(text+" "+url)}`);
 }
 </script>
 
