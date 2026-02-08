@@ -6,108 +6,144 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color: white;
-  text-align: center;
+  padding: 0;
+}
+
+body{
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  color: white;
 }
 
-.container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 20px;
-}
-
-h1 {
-  font-size: 2.2rem;
-  animation: fadeIn 2s ease;
-}
-
-p {
-  font-size: 1.2rem;
-  margin-top: 15px;
-  animation: slideUp 2s ease;
-}
-
-button {
-  margin-top: 25px;
-  padding: 12px 25px;
-  border: none;
+.card{
+  width: 92%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
   border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  animation: zoomIn 1.2s ease;
+}
+
+h1{
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  animation: fadeDown 1.5s ease;
+}
+
+p{
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 12px 0;
+  animation: fadeUp 2s ease;
+}
+
+.propose{
+  font-size: 1.4rem;
+  margin-top: 20px;
+  font-weight: bold;
+  animation: glow 2s infinite alternate;
+}
+
+button{
+  margin-top: 22px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
   background: white;
   color: #ff4d6d;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  animation: pulse 1.5s infinite;
+  animation: heartbeat 1.5s infinite;
 }
 
-.heart {
+.heart{
   position: fixed;
   bottom: -20px;
-  font-size: 20px;
-  animation: floatUp 6s linear infinite;
+  animation: floatUp 7s linear infinite;
 }
 
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
+@keyframes zoomIn{
+  from{transform: scale(0.7); opacity:0;}
+  to{transform: scale(1); opacity:1;}
 }
 
-@keyframes slideUp {
-  from {transform: translateY(30px); opacity:0;}
-  to {transform: translateY(0); opacity:1;}
+@keyframes fadeDown{
+  from{opacity:0; transform: translateY(-30px);}
+  to{opacity:1; transform: translateY(0);}
 }
 
-@keyframes floatUp {
-  to {transform: translateY(-120vh); opacity:0;}
+@keyframes fadeUp{
+  from{opacity:0; transform: translateY(30px);}
+  to{opacity:1; transform: translateY(0);}
 }
 
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.1);}
-  100% {transform: scale(1);}
+@keyframes heartbeat{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+@keyframes glow{
+  from{text-shadow: 0 0 5px #fff;}
+  to{text-shadow: 0 0 20px #fff;}
+}
+
+@keyframes floatUp{
+  to{transform: translateY(-120vh); opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
   <h1>Hey My Love ❤️</h1>
+
   <p>
-    Jab se tum meri life mein aayi ho,<br>
-    har din thoda zyada beautiful ho gaya hai ✨
+    Jab se tum meri zindagi mein aayi ho,<br>
+    har din ek beautiful feeling ban gaya hai ✨
   </p>
 
   <p>
-    Tum meri smile ki wajah ho,<br>
-    meri har dua ka answer ho 💕
+    Tumhari smile meri favorite habit hai,<br>
+    aur tum meri sabse pyaari aadat 💕
   </p>
 
-  <h1>Will you be mine forever? 💍</h1>
+  <div class="propose">
+    Will you be mine forever? 💍
+  </div>
 
-  <button onclick="alert('I Love You ❤️')">Yes 💖</button>
+  <button onclick="yesClicked()">Yes 💖</button>
 </div>
 
 <script>
-function createHeart() {
+function createHeart(){
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  heart.style.fontSize = Math.random() * 25 + 15 + "px";
   document.body.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
+  setTimeout(() => heart.remove(), 7000);
 }
 
-setInterval(createHeart, 300);
+setInterval(createHeart, 350);
+
+function yesClicked(){
+  alert("I Love You So Much ❤️🥹");
+}
 </script>
 
 </body>
