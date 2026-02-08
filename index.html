@@ -2,147 +2,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Propose Day ❤️</title>
+<title>Vishal ❤️ Kanika</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff4d6d, #ff8fab);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: white;
+  height:100vh;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fab);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
 }
 
 .card{
-  width: 92%;
-  max-width: 420px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 25px;
-  padding: 25px;
-  text-align: center;
-  animation: zoomIn 1.2s ease;
+  width:92%;
+  max-width:420px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+  animation:zoomIn 1.2s ease;
 }
 
 h1{
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  animation: fadeDown 1.5s ease;
+  font-size:1.8rem;
+  animation:fadeDown 1.5s ease;
+}
+
+.names{
+  margin:10px 0;
+  font-size:1.1rem;
+  opacity:0.9;
+}
+
+.slider{
+  margin:15px 0;
+  height:180px;
+  border-radius:15px;
+  background:url('https://i.imgur.com/QCNbOAo.jpg') center/cover;
+  animation:slideShow 12s infinite;
 }
 
 p{
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin: 12px 0;
-  animation: fadeUp 2s ease;
+  font-size:1.05rem;
+  margin:12px 0;
+  line-height:1.6;
+  animation:fadeUp 2s ease;
 }
 
 .propose{
-  font-size: 1.4rem;
-  margin-top: 20px;
-  font-weight: bold;
-  animation: glow 2s infinite alternate;
+  font-size:1.4rem;
+  font-weight:bold;
+  margin-top:15px;
+  animation:glow 2s infinite alternate;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
 }
 
 button{
-  margin-top: 22px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  background: white;
-  color: #ff4d6d;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  animation: heartbeat 1.5s infinite;
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.yes{
+  background:white;
+  color:#ff4d6d;
+  animation:heartbeat 1.5s infinite;
+}
+
+.no{
+  background:#ff2f5b;
+  color:white;
+  position:relative;
+}
+
+.share{
+  margin-top:15px;
+  font-size:0.9rem;
+  opacity:0.9;
+  cursor:pointer;
+  text-decoration:underline;
 }
 
 .heart{
-  position: fixed;
-  bottom: -20px;
-  animation: floatUp 7s linear infinite;
+  position:fixed;
+  bottom:-20px;
+  animation:floatUp 7s linear infinite;
 }
 
 @keyframes zoomIn{
-  from{transform: scale(0.7); opacity:0;}
-  to{transform: scale(1); opacity:1;}
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
 }
-
 @keyframes fadeDown{
-  from{opacity:0; transform: translateY(-30px);}
-  to{opacity:1; transform: translateY(0);}
+  from{opacity:0;transform:translateY(-30px);}
+  to{opacity:1;transform:translateY(0);}
 }
-
 @keyframes fadeUp{
-  from{opacity:0; transform: translateY(30px);}
-  to{opacity:1; transform: translateY(0);}
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
 }
-
 @keyframes heartbeat{
-  0%{transform: scale(1);}
-  50%{transform: scale(1.1);}
-  100%{transform: scale(1);}
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
 }
-
 @keyframes glow{
-  from{text-shadow: 0 0 5px #fff;}
-  to{text-shadow: 0 0 20px #fff;}
+  from{text-shadow:0 0 5px #fff;}
+  to{text-shadow:0 0 20px #fff;}
 }
-
 @keyframes floatUp{
-  to{transform: translateY(-120vh); opacity:0;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+@keyframes slideShow{
+  0%{background-image:url('https://i.imgur.com/QCNbOAo.jpg');}
+  33%{background-image:url('https://i.imgur.com/4AiXzf8.jpg');}
+  66%{background-image:url('https://i.imgur.com/9Yj1K0G.jpg');}
 }
 </style>
 </head>
 
 <body>
 
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
 <div class="card">
-  <h1>Hey My Love ❤️</h1>
+  <h1>Hey Kanika ❤️</h1>
+  <div class="names">From Vishal 💕</div>
+
+  <div class="slider"></div>
 
   <p>
-    Jab se tum meri zindagi mein aayi ho,<br>
-    har din ek beautiful feeling ban gaya hai ✨
+    Jab se tum meri life mein aayi ho,<br>
+    har din thoda zyada special ho gaya hai ✨
   </p>
 
   <p>
-    Tumhari smile meri favorite habit hai,<br>
-    aur tum meri sabse pyaari aadat 💕
+    Tum meri smile ki wajah ho,<br>
+    meri har dua ka answer 💖
   </p>
 
   <div class="propose">
     Will you be mine forever? 💍
   </div>
 
-  <button onclick="yesClicked()">Yes 💖</button>
+  <div class="buttons">
+    <button class="yes" onclick="yesClicked()">Yes 💖</button>
+    <button class="no" onmouseover="moveNo()">No 😜</button>
+  </div>
+
+  <div class="share" onclick="shareLove()">
+    💌 Share this with Kanika
+  </div>
 </div>
 
 <script>
 function createHeart(){
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 25 + 15 + "px";
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=Math.random()*25+15+"px";
   document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 7000);
+  setTimeout(()=>heart.remove(),7000);
 }
-
-setInterval(createHeart, 350);
+setInterval(createHeart,300);
 
 function yesClicked(){
-  alert("I Love You So Much ❤️🥹");
+  alert("I Love You Kanika ❤️🥹 Forever Yours — Vishal");
+}
+
+function moveNo(){
+  const btn=document.querySelector('.no');
+  btn.style.transform=`translate(${Math.random()*80-40}px,${Math.random()*80-40}px)`;
+}
+
+function shareLove(){
+  const text="Kanika ❤️ Vishal\nWill you be mine forever? 💍";
+  const url=window.location.href;
+  window.open(`https://wa.me/?text=${encodeURIComponent(text+" "+url)}`);
 }
 </script>
 
